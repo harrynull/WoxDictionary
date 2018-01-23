@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Dictionary.DictionarySettings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Loaded="View_Loaded"
+             d:DesignHeight="300" Width="465">
+    <Grid Margin="10" VerticalAlignment="Top" >
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="ICIBAToken" Margin="0,11,0,0"></Label>
+        <TextBox Grid.Row="0" x:Name="ICIBAToken" Margin="112,11,0,9" HorizontalAlignment="Left" Width="262"/>
+        <TextBlock Grid.Row="0" Margin="381,10,0,28" Grid.RowSpan="2"><Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="http://open.iciba.com/?c=api">Get one</Hyperlink></TextBlock>
+        <Label Grid.Row="1" Content="BighugelabsToken" Margin="0,5,0,0"></Label>
+        <TextBox Grid.Row="1" x:Name="BighugelabsToken" Margin="112,10,0,10" HorizontalAlignment="Left" Width="262"/>
+        <TextBlock Grid.Row="1" Margin="381,10,0,28" Grid.RowSpan="2"><Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="https://words.bighugelabs.com/getkey.php">Get one</Hyperlink></TextBlock>
+        <Label Grid.Row="2" Margin="0,5,0,0" Content="Max edit distance for spelling correction"></Label>
+        <TextBox Grid.Row="2" x:Name="MaxEditDistance"  Margin="229,10,0,10" HorizontalAlignment="Left" Width="46"/>
+        <Label Grid.Row="3" Content="You need to restart Wox to apply the changes." FontWeight="Bold"></Label>
+
+    </Grid>
+</UserControl>

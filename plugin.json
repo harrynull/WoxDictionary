@@ -1,0 +1,12 @@
+{
+    "ID":"c3406b5c-22f0-4984-b018-3dae897cab3f",
+    "ActionKeyword":"d",
+    "Name":"Dictionary",
+    "Description":"English to Chinese word translation, word correction and synonym. Most functions can work offline.",
+    "Author":"Harry Yu",
+    "Version":"1.0",
+    "Language":"csharp",
+    "Website":"https://github.com/Wox-launche/Wox",
+    "IcoPath":"Images\\plugin.png",
+    "ExecuteFileName":"Dictionary.dll"
+}
