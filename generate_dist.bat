@@ -5,8 +5,9 @@ mkdir dist
 mkdir dist\config
 mkdir dist\x64
 mkdir dist\x86
+mkdir dist\Images
 xcopy dicts dist\dicts /i /s /y
-xcopy Images dist\Images /i /s /y
+copy Images\plugin.png dist\Images
 copy bin\Release\Dictionary.dll dist
 copy bin\Release\Newtonsoft.Json.dll dist
 copy bin\Release\x64\SQLite.Interop.dll dist\x64\
