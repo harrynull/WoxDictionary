@@ -18,21 +18,25 @@ namespace Dictionary
         public List<string> Query(string vocab)
         {
             List<string> ret = new List<string>();
-            WebRequest request = WebRequest.Create(
-              String.Format("http://words.bighugelabs.com/api/2/{0}/{1}/", ApiToken, vocab));
-            WebResponse response = request.GetResponse();
-            Stream dataStream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(dataStream);
-            string strResponse = reader.ReadToEnd();
-            
-            foreach (var line in strResponse.Split('\n'))
+            try
             {
-                if (line == "") continue;
-                var parts = line.Split('|');
-                if (parts[1] == "syn") ret.Add(parts[2]);
+                WebRequest request = WebRequest.Create(
+                  String.Format("http://words.bighugelabs.com/api/2/{0}/{1}/", ApiToken, vocab));
+                WebResponse response = request.GetResponse();
+                Stream dataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(dataStream);
+                string strResponse = reader.ReadToEnd();
+
+                foreach (var line in strResponse.Split('\n'))
+                {
+                    if (line == "") continue;
+                    var parts = line.Split('|');
+                    if (parts[1] == "syn") ret.Add(parts[2]);
+                }
+                reader.Close();
+                response.Close();
             }
-            reader.Close();
-            response.Close();
+            catch (Exception) { }
             return ret;
         }
     }

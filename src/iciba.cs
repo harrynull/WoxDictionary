@@ -52,29 +52,32 @@ namespace Dictionary
         // Chinese to English. Internet access needed.
         public List<string> Query(string word)
         {
-            WebRequest request = WebRequest.Create(
-              String.Format("http://dict-co.iciba.com/api/dictionary.php?w={0}&key={1}&type=json", word, token));
-            WebResponse response = request.GetResponse();
-            Stream dataStream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(dataStream);
-            //dynamic rsp = JsonConvert.DeserializeObject(reader.ReadToEnd());
-            var rsp = JsonConvert.DeserializeObject< ServerResponse >(reader.ReadToEnd());
-
             List<string> ret = new List<string>();
-            if (rsp.symbols == null) return ret;
-            foreach (var symbol in rsp.symbols)
+            try
             {
-                if (symbol.parts == null) continue;
-                foreach (var part in symbol.parts)
+                WebRequest request = WebRequest.Create(
+                  String.Format("http://dict-co.iciba.com/api/dictionary.php?w={0}&key={1}&type=json", word, token));
+                WebResponse response = request.GetResponse();
+                Stream dataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(dataStream);
+                //dynamic rsp = JsonConvert.DeserializeObject(reader.ReadToEnd());
+                var rsp = JsonConvert.DeserializeObject<ServerResponse>(reader.ReadToEnd());
+
+                if (rsp.symbols == null) return ret;
+                foreach (var symbol in rsp.symbols)
                 {
-                    if (part.means == null) continue;
-                    foreach (var mean in part.means)
+                    if (symbol.parts == null) continue;
+                    foreach (var part in symbol.parts)
                     {
-                        ret.Add(mean.word_mean.ToString());
+                        if (part.means == null) continue;
+                        foreach (var mean in part.means)
+                        {
+                            ret.Add(mean.word_mean.ToString());
+                        }
                     }
                 }
             }
-
+            catch (Exception) { }
             return ret;
         }
     }
