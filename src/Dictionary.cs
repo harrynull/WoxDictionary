@@ -53,7 +53,7 @@ namespace Dictionary
             {
                 ActionFunc = e =>
                 {
-                    context.API.ChangeQuery(ActionWord + " " + (word==null?QueryWord:word) + extraAction);
+                    context.API.ChangeQuery(ActionWord + " " + (word ?? QueryWord) + extraAction);
                     return false;
                 };
             }
@@ -215,9 +215,9 @@ namespace Dictionary
             }
             else
             {
-                foreach (var traslation in translations)
+                foreach (var translation in translations)
                 {
-                    results.Add(MakeResultItem(traslation, queryWord));
+                    results.Add(MakeResultItem(translation, queryWord, "!", translation));
                 }
             }
 
