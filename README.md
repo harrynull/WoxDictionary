@@ -49,6 +49,25 @@ This is a [Wox](https://github.com/Wox-launcher/Wox) plugin that supports Englis
 
   按 Alt+Enter 即可复制单词 Pressing Alt+Enter can copy the word.
 
+## 编译 / Compilation
+
+1. 使用 Visual Studio 编译此项目。 Compile it using Visual Studio.
+2. 运行`generate_dist.bat` 以自动打包。 Pack it using `generate_dist.bat`
+
+## 安装 / Installation
+
+1. 你需要先安装 [Wox](https://github.com/Wox-launcher/Wox)。 
+
+   You need to have [Wox](https://github.com/Wox-launcher/Wox) installed first.
+
+2. 复制 dist 文件夹到 `C:\Users\\{User Name}\AppData\Local\Wox\app-{Version Number}\Plugins\`
+
+   Copy dist folder to `C:\Users\\{User Name}\AppData\Local\Wox\app-{Version Number}\Plugins\`
+
+3. 打开设置，配置 API tokens.
+
+   Open settings and configure API tokens.
+
 ## 致谢 / Acknowledgment
 
 这个项目没有以下伟大项目的帮助是不可能完成的：
