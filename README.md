@@ -9,41 +9,41 @@ This is a [Wox](https://github.com/Wox-launcher/Wox) plugin that supports Englis
 
 * 中英互译 English/Chinese word translation
 
-  ![cn_to_en](Images\demo\cn_to_en.png)
+  ![cn_to_en](Images/demo/cn_to_en.png)
 
-  ![en_to_cn](Images\demo\en_to_cn.png)
+  ![en_to_cn](Images/demo/en_to_cn.png)
 
 * 音标 Phonetic
 
-  ![Phonetic](Images\demo\phonetic.png)
+  ![Phonetic](Images/demo/phonetic.png)
 
 * 中文释义 Translation
 
   单词结尾加!t即可触发. Add !t at the end of the word to trigger.
 
-  ![Translation](Images\demo\translation.png)
+  ![Translation](Images/demo/translation.png)
 
 * 英文定义 Definition
 
   单词结尾加!d即可触发. Add !d at the end of the word to trigger.
 
-  ![Definition](Images\demo\definition.png)
+  ![Definition](Images/demo/definition.png)
 
 * 近义词 Synonym
 
   单词结尾加!s即可触发. Add !s at the end of the word to trigger.
 
-  ![Synonym](Images\demo\synonym.png)
+  ![Synonym](Images/demo/synonym.png)
 
 * 变型 Exchanges
 
   单词结尾加!e即可触发. Add !e at the end of the word to trigger.
 
-  ![Exchanges](Images\demo\exchanges.png)
+  ![Exchanges](Images/demo/exchanges.png)
 
 * 拼写修正 Spelling correction
 
-  ![Spelling correction](Images\demo\spelling_correction.png)
+  ![Spelling correction](Images/demo/spelling_correction.png)
 
 * 快捷复制 Word copy
 
