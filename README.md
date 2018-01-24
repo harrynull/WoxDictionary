@@ -58,6 +58,8 @@ The project won't be possible without the help of the following great projects:
 * [Wox](https://github.com/Wox-launcher/Wox) Launcher for Windows, an alternative to Alfred and Launchy.
 * [ECDICT](https://github.com/skywind3000/ECDICT) Free English to Chinese Dictionary Database. By Linwei.
 * [SymSpell](https://github.com/wolfgarbe/SymSpell) 1 million times faster through Symmetric Delete spelling correction algorithm. By Wolf Garbe.
+* [Big Huge Thesaurus](https://words.bighugelabs.com/api.php) A very simple API for retrieving the synonyms for any word.
+* [iciba](http://open.iciba.com/?c=api) Chinese traslation API.
 
 ## License
 
