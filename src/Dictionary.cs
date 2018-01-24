@@ -77,20 +77,38 @@ namespace Dictionary
         // English -> Chinese, supports fuzzy search.
         private List<Result> FirstLevelQuery(Query query)
         {
+            bool IsExistsInResults(List<Result> res, string word)
+            {
+                foreach (var item in res)
+                {
+                    if (item.Title == word) return true;
+                }
+                return false;
+            }
+
             string queryWord = query.Search;
             List<Result> results = new List<Result>();
-            
+
+            // Pull fully match first.
+            Word fullMatch = ecdict.Query(query.Search);
+            if (fullMatch != null) results.Add(MakeWordResult(fullMatch));
+
+            // Then fuzzy search results. (since it's usually only a few)
             List<SymSpell.SuggestItem> suggestions = wordCorrection.Correct(queryWord);
             foreach (var suggestion in suggestions)
             {
                 Word word = ecdict.Query(suggestion.term);
-                results.Add(MakeWordResult(word));
+                
+                if(!IsExistsInResults(results, word.word)) // to avoid repetitive results
+                    results.Add(MakeWordResult(word));
             }
 
+            // Lastly, the words beginning with the query.
             var result_begin = ecdict.QueryBeginningWith(queryWord);
             foreach (var word in result_begin)
             {
-                results.Add(MakeWordResult(word));
+                if (!IsExistsInResults(results, word.word))
+                    results.Add(MakeWordResult(word));
             }
 
             return results;
