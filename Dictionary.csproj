@@ -67,32 +67,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dictionary.cs" />
-    <Compile Include="ECDict.cs" />
-    <Compile Include="EditDistance.cs" />
-    <Compile Include="iciba.cs" />
+    <Compile Include="src\Dictionary.cs" />
+    <Compile Include="src\ECDict.cs" />
+    <Compile Include="src\EditDistance.cs" />
+    <Compile Include="src\iciba.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Settings.cs" />
-    <Compile Include="DictionarySettings.xaml.cs">
+    <Compile Include="src\Settings.cs" />
+    <Compile Include="src\DictionarySettings.xaml.cs">
       <DependentUpon>DictionarySettings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SymSpell.cs" />
-    <Compile Include="Synonyms.cs" />
-    <Compile Include="Word.cs" />
-    <Compile Include="WordCorrection.cs" />
+    <Compile Include="src\SymSpell.cs" />
+    <Compile Include="src\Synonyms.cs" />
+    <Compile Include="src\Word.cs" />
+    <Compile Include="src\WordCorrection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="frequency_dictionary_en_82_765.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="DictionarySettings.xaml">
+    <Page Include="src\DictionarySettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
