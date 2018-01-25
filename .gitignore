@@ -288,4 +288,5 @@ __pycache__/
 *.xsd.cs
 
 # distribution
-dist
+dist/*
+!dist/7zxa.dll
