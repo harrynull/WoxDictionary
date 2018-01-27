@@ -151,8 +151,9 @@ namespace Dictionary
                 results.Add(MakeResultItem("Definition", word.definition.Replace("\n", "; "), "d"));
             if (word.exchange != "")
                 results.Add(MakeResultItem("Exchanges", word.exchange, "e"));
-            results.Add(MakeResultItem("Synonym", String.Join("; ", synonyms.Query(word.word)), "s"));
-
+            var synonymsResult = String.Join("; ", synonyms.Query(word.word));
+            if (synonymsResult != "")
+                results.Add(MakeResultItem("Synonym", synonymsResult, "s"));
             return results;
         }
 
