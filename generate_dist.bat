@@ -13,6 +13,5 @@ copy bin\Release\Newtonsoft.Json.dll dist
 copy bin\Release\x64\SQLite.Interop.dll dist\x64\
 copy bin\Release\x86\SQLite.Interop.dll dist\x86\
 copy bin\Release\System.Data.SQLite.dll dist
-copy bin\Release\SevenZipSharp.dll dist
 copy plugin.json dist
 pause

@@ -40,12 +40,8 @@ namespace Dictionary
             else
                 settings = new Settings();
             settings.ConfigFile = ConfigFile;
+
             ecdict = new ECDict(CurrentPath + "/dicts/ecdict.db");
-
-            if (!File.Exists(CurrentPath + "/dicts/ecdict.db") &&
-                MessageBox.Show("Dictionary Missing", "Dictionary file missing. Click Yes to download. 词典文件缺失，点是开始下载。", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-                new Downloader(CurrentPath + "\\").Download();
-
             wordCorrection = new WordCorrection(CurrentPath + "/dicts/frequency_dictionary_en_82_765.txt", settings.MaxEditDistance);
             synonyms = new Synonyms(settings.BighugelabsToken);
             iciba = new Iciba(settings.ICIBAToken);
@@ -155,9 +151,7 @@ namespace Dictionary
                 results.Add(MakeResultItem("Definition", word.definition.Replace("\n", "; "), "d"));
             if (word.exchange != "")
                 results.Add(MakeResultItem("Exchanges", word.exchange, "e"));
-            var synonymsResult = String.Join("; ", synonyms.Query(word.word));
-            if (synonymsResult != "")
-                results.Add(MakeResultItem("Synonym", synonymsResult, "s"));
+            results.Add(MakeResultItem("Synonym", String.Join("; ", synonyms.Query(word.word)), "s"));
 
             return results;
         }

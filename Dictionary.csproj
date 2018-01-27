@@ -45,9 +45,6 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="SevenZipSharp, Version=0.64.3890.29348, Culture=neutral, PublicKeyToken=20de82c62b055c88, processorArchitecture=MSIL">
-      <HintPath>packages\SevenZipSharp.0.64\lib\SevenZipSharp.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -70,7 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Downloader.cs" />
     <Compile Include="src\Dictionary.cs" />
     <Compile Include="src\ECDict.cs" />
     <Compile Include="src\EditDistance.cs" />
