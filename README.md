@@ -56,17 +56,28 @@ This is a [Wox](https://github.com/Wox-launcher/Wox) plugin that supports Englis
 
 ## 安装 / Installation
 
+### 
+
 1. 你需要先安装 [Wox](https://github.com/Wox-launcher/Wox)。 
 
    You need to have [Wox](https://github.com/Wox-launcher/Wox) installed first.
 
-2. 复制 dist 文件夹到 `C:\Users\\{User Name}\AppData\Local\Wox\app-{Version Number}\Plugins\`
+2. (手动安装) 复制 dist 文件夹到 `C:\Users\\{User Name}\AppData\Local\Wox\app-{Version Number}\Plugins\`
 
-   Copy dist folder to `C:\Users\\{User Name}\AppData\Local\Wox\app-{Version Number}\Plugins\`
+   (Manual Installation) Copy dist folder to `C:\Users\\{User Name}\AppData\Local\Wox\app-{Version Number}\Plugins\`
 
-3. 打开设置，配置 API tokens.
+   (WPM 安装) 在 Wox 中输入 `wpm install Dictionary`。
+
+   (Wox Plugin Manager) Type `wpm install Dictionary` in your Wox.
+
+3. **下载，解压，复制 [ecdict.db](https://github.com/harrynull/WoxDictionary/releases/tag/dict) 到 `C:\Users\用户名\AppData\Roaming\Wox\Plugins\Dictionary-随机串\dicts`。**
+
+   **Download, uncompress and copy [ecdict.db](https://github.com/harrynull/WoxDictionary/releases/tag/dict) to `C:\Users\{your_user_name}\AppData\Roaming\Wox\Plugins\Dictionary-{random_characters}\dicts`.**
+
+4. 打开设置，配置 API tokens.
 
    Open settings and configure API tokens.
+
 
 ## 致谢 / Acknowledgment
 
