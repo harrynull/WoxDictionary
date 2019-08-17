@@ -51,6 +51,13 @@ namespace Dictionary
                 catch (Exception) { }
                 settings.Save();
             };
+
+            EnglishDefinition.IsChecked = settings.ShowEnglishDefinition;
+            EnglishDefinition.Click += (o, e) =>
+            {
+                settings.ShowEnglishDefinition = EnglishDefinition.IsChecked ?? false;
+                settings.Save();
+            };
         }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)

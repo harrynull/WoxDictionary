@@ -89,7 +89,9 @@ namespace Dictionary
         }
 
         private Result MakeWordResult(Word word) =>
-            MakeResultItem(word.word, (word.phonetic != "" ? ("/" + word.phonetic + "/ ") : "") + word.translation.Replace("\n", "; "), "!", word.word);
+            MakeResultItem(word.word, (word.phonetic != "" ? ("/" + word.phonetic + "/ ") : "") +
+                (settings.ShowEnglishDefinition ? word.definition.Replace("\n", "; ") : word.translation.Replace("\n", "; ")),
+                "!", word.word);
 
         // First-level query.
         // English -> Chinese, supports fuzzy search.

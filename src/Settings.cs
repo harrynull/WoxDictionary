@@ -14,6 +14,7 @@ namespace Dictionary
         public string ICIBAToken = "BEBC0A981CB63ED5198597D732BD8956";
         public string BighugelabsToken = "";
         public int MaxEditDistance = 3;
+        public bool ShowEnglishDefinition = false;
 
         public void Save()
         {
