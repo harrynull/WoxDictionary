@@ -67,7 +67,7 @@ namespace Dictionary
                 }
                 return true;
             }
-            bool readWordIfNeeded(ActionContext e)
+            bool ReadWordIfNeeded(ActionContext e)
             {
                 if (!e.SpecialKeyState.CtrlPressed) return false;
                 if (synth == null)
@@ -85,7 +85,7 @@ namespace Dictionary
                 ActionFunc = e =>
                 {
                     if (CopyIfNeeded(e)) return true;
-                    if (readWordIfNeeded(e)) return false;
+                    if (ReadWordIfNeeded(e)) return false;
                     context.API.ChangeQuery(ActionWord + " " + (word ?? QueryWord) + extraAction);
                     return false;
                 };
@@ -93,8 +93,8 @@ namespace Dictionary
             else
             {
                 ActionFunc = e => {
-                    CopyIfNeeded(e);
-                    if(readWordIfNeeded(e)) return false;
+                    if(CopyIfNeeded(e)) return true;
+                    if(ReadWordIfNeeded(e)) return false;
                     if(settings.WordWebsite!="") System.Diagnostics.Process.Start(string.Format(settings.WordWebsite, getWord()));
                     return true;
                 };
