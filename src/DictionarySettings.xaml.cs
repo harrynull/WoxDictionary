@@ -41,6 +41,13 @@ namespace Dictionary
                 settings.Save();
             };
 
+            WordWebsite.Text = settings.WordWebsite;
+            WordWebsite.TextChanged += (o, e) =>
+            {
+                settings.WordWebsite = WordWebsite.Text;
+                settings.Save();
+            };
+
             MaxEditDistance.Text = settings.MaxEditDistance.ToString();
             MaxEditDistance.TextChanged += (o, e) =>
             {

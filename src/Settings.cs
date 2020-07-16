@@ -15,6 +15,7 @@ namespace Dictionary
         public string BighugelabsToken = "";
         public int MaxEditDistance = 3;
         public bool ShowEnglishDefinition = false;
+        public string WordWebsite = "";
 
         public void Save()
         {

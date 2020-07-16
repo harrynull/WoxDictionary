@@ -95,6 +95,7 @@ namespace Dictionary
                 ActionFunc = e => {
                     CopyIfNeeded(e);
                     if(readWordIfNeeded(e)) return false;
+                    if(settings.WordWebsite!="") System.Diagnostics.Process.Start(string.Format(settings.WordWebsite, getWord()));
                     return true;
                 };
             }
