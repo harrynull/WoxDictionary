@@ -5,6 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Speech.Synthesis;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,6 +22,7 @@ namespace Dictionary
         private Iciba iciba;
         private PluginInitContext context;
         private Settings settings;
+        private SpeechSynthesizer synth;
 
         // These two are only for jumping in MakeResultItem
         private string ActionWord;
@@ -50,14 +52,14 @@ namespace Dictionary
 
         Result MakeResultItem(string title, string subtitle, string extraAction = null, string word = null)
         {
+            string getWord() { return (word ?? QueryWord).Replace("!", ""); }
             // Return true if the user tries to copy (regradless of the result)
             bool CopyIfNeeded(ActionContext e)
             {
                 if (!e.SpecialKeyState.AltPressed) return false;
                 try
                 {
-                    Clipboard.SetText((word ?? QueryWord).Replace("!", ""));
-                    // context.API.ShowMsg("Result copied.");
+                    Clipboard.SetText(getWord());
                 }
                 catch (ExternalException ee)
                 {
@@ -65,19 +67,36 @@ namespace Dictionary
                 }
                 return true;
             }
+            bool readWordIfNeeded(ActionContext e)
+            {
+                if (!e.SpecialKeyState.CtrlPressed) return false;
+                if (synth == null)
+                {
+                    synth = new SpeechSynthesizer();
+                    synth.SetOutputToDefaultAudioDevice();
+                }
+                synth.SpeakAsync(getWord());
+                return true;
+            }
+
             Func<ActionContext, bool> ActionFunc;
             if (extraAction != null)
             {
                 ActionFunc = e =>
                 {
                     if (CopyIfNeeded(e)) return true;
+                    if (readWordIfNeeded(e)) return false;
                     context.API.ChangeQuery(ActionWord + " " + (word ?? QueryWord) + extraAction);
                     return false;
                 };
             }
             else
             {
-                ActionFunc = e => { CopyIfNeeded(e); return true; };
+                ActionFunc = e => {
+                    CopyIfNeeded(e);
+                    if(readWordIfNeeded(e)) return false;
+                    return true;
+                };
             }
             return new Result()
             {
