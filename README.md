@@ -49,6 +49,15 @@ This is a [Wox](https://github.com/Wox-launcher/Wox) plugin that supports Englis
 
   按 Alt+Enter 即可复制单词 Pressing Alt+Enter can copy the word.
 
+* 单词发音 Pronunciation
+
+  按 Ctrl+Enter 即可读出选中的单词 Pressing Ctrl+Enter can read the selected word.
+
+* 搜索单词 Search Words
+
+  选中任何一个!结果即可跳转到设置好的网站 Select any results in the `!` mode can jump to the configured website.
+
+
 ## 编译 / Compilation
 
 1. 使用 Visual Studio 编译此项目。 Compile it using Visual Studio.
