@@ -5,6 +5,10 @@
 
 This is a [Wox](https://github.com/Wox-launcher/Wox) plugin that supports English/Chinese word translation, word correction and synonym. Most of its functions can work offline.
 
+如果你是 [Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher) 的用户的话，请移步至 [Flow.Launcher.Dictionary](https://github.com/harrynull/Flow.Launcher.Dictionary)。
+
+If you are an user of [Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher), there is a port of this plugin at [Flow.Launcher.Dictionary](https://github.com/harrynull/Flow.Launcher.Dictionary).
+
 ## 功能 / Features
 
 * 中英互译 English/Chinese word translation
